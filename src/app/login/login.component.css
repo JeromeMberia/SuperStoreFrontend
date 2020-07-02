@@ -1,3 +1,8 @@
+.dash{
+  margin-right: 60px;
+}
+
+
 
 .rowAuth {
   display: flex;
@@ -13,7 +18,10 @@
 
 button {
   color: #fff;
-  background-color: #166d9e
+  background-color: #166d9e;
+  width: 120px;
+  margin-top: 20px;
+
 }
 
 .mat-form-field {

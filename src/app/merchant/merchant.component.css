@@ -1,4 +1,8 @@
-
+h2{
+  font-family: 'Lora', serif;
+  font-size: 35px;
+  margin-top: 50px;
+} 
   ul {
     list-style-type: none;
     margin: 0;
@@ -78,3 +82,24 @@
    margin-top: 5px;
    margin-bottom: 10px;
  }
+
+ .inventory{
+  margin-right: 100px;
+  margin-bottom: 200px;
+  }
+
+  .inventory h1{
+    text-align: center;
+
+  }
+
+  .payment{
+    margin-right: 100px;
+    margin-bottom: 200px;
+    }
+
+    .payment h1{
+      text-align: center;
+    
+
+    }

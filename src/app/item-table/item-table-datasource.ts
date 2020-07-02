@@ -15,10 +15,14 @@ export interface ItemTableItem {
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: ItemTableItem[] = [
-  {item: 'Paper', buying_price: 100, quantity_bought: 20, supplier: "John paper mills"},
-  {item: 'Pens', buying_price: 20, quantity_bought: 200, supplier: "Pens people supplier"},
-  {item: 'Paper', buying_price: 100, quantity_bought: 20, supplier: "John paper mills"},
-  {item: 'Paper', buying_price: 100, quantity_bought: 20, supplier: "John paper mills"},
+  {item: 'Hammer', buying_price: 500, quantity_bought: 10, supplier: "John's hardware"},
+  {item: 'Nails', buying_price: 100, quantity_bought: 200, supplier: "John's hardware"},
+  {item: 'Cake', buying_price: 50, quantity_bought: 10, supplier: "Baker mills"},
+  {item: 'Dress', buying_price: 250, quantity_bought: 20, supplier: "Fiona designs"},
+  {item: 'Skirt', buying_price: 200, quantity_bought: 30, supplier: "Fiona designs"},
+  {item: 'Pen', buying_price: 30, quantity_bought: 20, supplier: "Rajid's stationary"},
+  {item: 'Pencil', buying_price: 100, quantity_bought: 20, supplier: "Rajid's stationary"},
+  {item: 'Paper', buying_price: 100, quantity_bought: 20, supplier: "Rajid's stationary"},
   
 
 ];

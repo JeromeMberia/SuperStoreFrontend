@@ -23,41 +23,28 @@
 
                 </div>
             </div>
-            <h5 class="card-title">Manager</h5>
-            <h5 class="card-title">Management</h5>
-        </a>
-    </li>
-
-
-
-    <li>
-        <a class="active" href="/manager-item">
-            <div class="row">
-                <div class="col-sm-6 dash-img">
-                    <img src="assets/images/order.png" width="48px">
-                </div>
-                <div class="col-sm-6">
-
-                </div>
-            </div>
-            <h5 class="card-title">Orders</h5>
+            <h5 class="card-title">Managers</h5>
         </a>
     </li>
 
 
     <li>
-        <a class="active" href="#home">
+        <a class="nav-item nav-link active" routerLink="/merchant-dash-manager" routerLinkActive='active'>
             <div class="row">
                 <div class="col-sm-6 dash-img">
-                    <img src="assets/images/discount.png" width="40px">
+                    <img src="assets/images/store.png" width="50px">
                 </div>
                 <div class="col-sm-6">
 
                 </div>
             </div>
-            <h5>Sales</h5>
+            <h5 class="card-title">Shops</h5>
         </a>
     </li>
+
+
+
+
 
 
     <li>
@@ -75,66 +62,57 @@
     </li>
 </ul>
 
-   
-
-    <div class="dashboard">
-        <h1>Merchant</h1>
-        <hr>
-
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card products">
-                    <div class="card-body">
-                        <img src="assets/images/basket.png" width="60px">
-                        <h5 class="card-title">Total Products</h5>
-                        <p class="card-text">10</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card sales">
-
-                    <div class="card-body">
-                        <img src="assets/images/sale.png" width="60px">
-                        <h5 class="card-title">Total Sales</h5>
-                        <p class="card-text">20</p>
-
-                    </div>
-                </div>
-            </div>
 
 
-            <div class="col-md-4">
-                <div class="card products">
-                    <div class="card-body">
-                        <img src="assets/images/store.png" width="60px">
-                        <h5 class="card-title">Store</h5>
-                        <p class="card-text">5</p>
+<div class="dashboard">
+    <h1>Merchant</h1>
+    <hr>
 
-                    </div>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="inventory">
+                <h2>Inventory in Ksh</h2>
+                <div class="doughnut" style="display: block;">
+                    <canvas width="100%" height="100%" baseChart [data]="doughnutChartData"
+                        [labels]="doughnutChartLabels" [chartType]="doughnutChartType"
+                        [options]="doughnutChartOptions" [colors]="pieChartColors"></canvas>
                 </div>
             </div>
         </div>
-        <h3>Purchases</h3>
-        <div style="display: block;">
-            <canvas baseChart 
-            [datasets]  ="barChartData"
-            [labels]    ="barChartLabels"
-            [options]   ="barChartOptions"
-            [legend]    ="barChartLegend"
-            [chartType] ="barChartType">
-            </canvas>
-        </div>
-        <h3>Sales</h3>
-        <div style="display: block;">
-            <canvas baseChart 
-            [datasets]  ="barChartData1"
-            [labels]    ="barChartLabels1"
-            [options]   ="barChartOptions1"
-            [legend]    ="barChartLegend1"
-            [chartType] ="barChartType1">
-            </canvas>
+
+
+        <div class="col-md-6">
+            <div class="payment">
+                <h2>Payment</h2>
+                <div style="display: block">
+
+                    <canvas width="100%" height="100%" baseChart [data]="pieChartData" [labels]="pieChartLabels"
+                        [chartType]="pieChartType" [colors]="pieChartColors" [options]=pieChartOptions>
+                    </canvas>
+                </div>
+            </div>
         </div>
 
     </div>
+
+    <div class="purchase">
+        <h2> Purchase</h2>
+        <div  class="barChart" style="display: block;">
+            <canvas  baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                [legend]="barChartLegend" [chartType]="barChartType" [colors]="chartColors">
+            </canvas>
+        </div>
+    </div>
+
+
+    <div class="purchase">
+        <h2> Sales</h2>
+        <div class="barChart2" style="display: block;">
+            <canvas baseChart [datasets]="barChartData2" [labels]="barChartLabels2" [options]="barChartOptions"
+                [legend]="barChartLegend2" [chartType]="barChartType2" [colors]="chartColors">
+            </canvas>
+        </div>
+    </div>
+</div>

@@ -5,26 +5,34 @@ import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 
 // TODO: Replace this with your own data model type
-export interface MerchantTableItem {
-  name: string;
-  shop: string;
-  email: string;
+export interface SalesTableItem {
+  item: string;
+  selling_price: number;
+  quantity_bought: number;
+  clerk: string;
+
 }
 
 // TODO: replace this with real data from your application
-const EXAMPLE_DATA: MerchantTableItem[] = [
-  {name: 'Brian Nabiswa', shop: 'Westlands', email:'brnabiswa@gmail.com'},
-  {name: 'Rahab Wanjiku', shop: 'Thika Road', email:'wanjikubr@gmail.com'},
-  {name: 'Abdul mohammed', shop: 'CBD', email:'fatahabd@gmail.com'},
+const EXAMPLE_DATA: SalesTableItem[] = [
+{item: 'Paper', selling_price: 10, quantity_bought: 10, clerk: "Jerome Mberia"},
+{item: 'Pens', selling_price: 20, quantity_bought: 5, clerk: "Jerome mberia"},
+{item: 'Hammer', selling_price: 100, quantity_bought: 1, clerk: "Jerome mberia"},
+{item: 'Dress', selling_price: 1000, quantity_bought: 1, clerk: "Jerome mberia"},
+{item: 'Cake', selling_price: 150, quantity_bought: 2, clerk: "Jerome mberia"},
+{item: 'Bread', selling_price: 50, quantity_bought: 1, clerk: "Antonio Maina"},
+{item: 'Ruler', selling_price: 20, quantity_bought: 1, clerk: "Antonio Maina"},
+ 
+  
 ];
 
 /**
- * Data source for the MerchantTable view. This class should
+ * Data source for the SalesTable view. This class should
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
-export class MerchantTableDataSource extends DataSource<MerchantTableItem> {
-  data: MerchantTableItem[] = EXAMPLE_DATA;
+export class SalesTableDataSource extends DataSource<SalesTableItem> {
+  data: SalesTableItem[] = EXAMPLE_DATA;
   paginator: MatPaginator;
   sort: MatSort;
 
@@ -37,7 +45,7 @@ export class MerchantTableDataSource extends DataSource<MerchantTableItem> {
    * the returned stream emits new items.
    * @returns A stream of the items to be rendered.
    */
-  connect(): Observable<MerchantTableItem[]> {
+  connect(): Observable<SalesTableItem[]> {
     // Combine everything that affects the rendered data into one update
     // stream for the data-table to consume.
     const dataMutations = [
@@ -61,7 +69,7 @@ export class MerchantTableDataSource extends DataSource<MerchantTableItem> {
    * Paginate the data (client-side). If you're using server-side pagination,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getPagedData(data: MerchantTableItem[]) {
+  private getPagedData(data: SalesTableItem[]) {
     const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
     return data.splice(startIndex, this.paginator.pageSize);
   }
@@ -70,7 +78,7 @@ export class MerchantTableDataSource extends DataSource<MerchantTableItem> {
    * Sort the data (client-side). If you're using server-side sorting,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getSortedData(data: MerchantTableItem[]) {
+  private getSortedData(data: SalesTableItem[]) {
     if (!this.sort.active || this.sort.direction === '') {
       return data;
     }
@@ -78,9 +86,10 @@ export class MerchantTableDataSource extends DataSource<MerchantTableItem> {
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
-        case 'shop': return compare(+a.shop, +b.shop, isAsc);
-        case 'email': return compare(+a.shop, +b.shop, isAsc);
+        case 'item': return compare(a.item, b.item, isAsc);
+        case 'selling_price': return compare(+a.selling_price, +b.selling_price, isAsc);
+        case 'quantity_bought': return compare(a.quantity_bought, b.quantity_bought, isAsc);
+        case 'clerk': return compare(+a.clerk, +b.clerk, isAsc);
         default: return 0;
       }
     });

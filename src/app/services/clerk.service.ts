@@ -4,8 +4,8 @@ import { User } from '../models/user.model';
 import { ProductBatch } from '../models/product.model';
 import { Sales } from '../models/sale.model';
 import { ApiService } from './api.service';
-import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 
 @Injectable({
@@ -17,6 +17,8 @@ export class ClerkService {
   private apiService: ApiService,
   private http: HttpClient,
  ){}
+
+ private httpOptions = {  headers: new HttpHeaders({'Content-Type': 'application/json'})}
 
     postProductBatch(batch:ProductBatch):Observable<ProductBatch> {
       const route = '/api/product-batch/'
@@ -84,6 +86,8 @@ postSales(sales:Sales):Observable<Sales> {
       )
     );
 }
+
+
 
 
 getSales():Observable<Sales[]> {

@@ -1,79 +1,165 @@
-<div class="auth-page mt-5">
-    <div class="container page">
-        <div class="row rowAuth">
+<ul>
+    <li>
+        <a class="nav-item nav-link active" routerLink="/manager" routerLinkActive='active'>
+            <div class="row">
+                <div class="col-sm-6 dash-img">
+                    <img src="assets/images/dashboard.png" width="36px">
+                </div>
+                <div class="col-sm-6">
 
-            <div class="card authCard p-4 col-md-5 col-xs-12">
-                <h1> Order edit request</h1>
-
-                <form [formGroup]='orderForm'>
-
-                    <mat-form-field class="form-group" appearance="outline">
-                        <mat-label>Item</mat-label>
-                        <input matInput formControlName="item" type="text" required>
-                    </mat-form-field>
-                    <mat-error *ngIf="submitted && field.item.hasError('required')">Item is required</mat-error>
-
-                    <br>
-
-                    <mat-form-field class="form-group" appearance="outline">
-                        <mat-label>Buying price</mat-label>
-                        <input matInput formControlName="buying_price" type="number" required>
-                    </mat-form-field>
-                    <mat-error *ngIf="submitted && field.buying_price.hasError('required')">Buying price is required
-                    </mat-error>
-
-                    <br>
-
-                    <mat-form-field class="form-group" appearance="outline">
-                        <mat-label>Quantity bought </mat-label>
-                        <input matInput formControlName="quantity_bought" type="number" required>
-                    </mat-form-field>
-                    <mat-error *ngIf="submitted && field.quantity_bought.hasError('required')">Quantity bought is
-                        required
-                    </mat-error>
-
-                    <br>
-
-                    <mat-form-field class="form-group" appearance="outline">
-                        <mat-label>Supplier</mat-label>
-                        <input matInput formControlName="supplier" type="text" required>
-                    </mat-form-field>
-                    <mat-error *ngIf="submitted && field.supplier.hasError('required')">Supplier is required
-                    </mat-error>
-
-                    <mat-form-field class="form-group" appearance="outline">
-                        <mat-label>Shop</mat-label>
-                        <input matInput formControlName="shop" type="text" required>
-                    </mat-form-field>
-                    <mat-error *ngIf="submitted && field.shop.hasError('required')">Shop is required
-                    </mat-error>
-
-
-                    <mat-form-field class="form-group" appearance="outline">
-                        <mat-label>Clerk</mat-label>
-                        <input matInput formControlName="clerk" type="text" required>
-                    </mat-form-field>
-                    <mat-error *ngIf="submitted && field.clerk.hasError('required')">Clerk is required</mat-error>
-
-
-                    <div class="col-md-5">
-                        <div class="radio">
-                            <label><input type="radio" [value]="true" formControlName="paid_for">Paid</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" [value]="false" formControlName="paid_for">Unpaid</label>
-                        </div>
-
-                    </div>
-                    <div class="col-md-6 text-right">
-                        <button mat-flat-button (click)='updateOrder()' type="submit"> Submit
-
-                        </button>
-                    </div>
-
-                </form>
+                </div>
             </div>
+            <h5 class="title">Dashboard</h5>
+        </a>
+    </li>
 
+    <li>
+        <a class="nav-item nav-link active" routerLink="/merchant-manager" routerLinkActive='active'>
+            <div class="row">
+                <div class="col-sm-6 dash-img">
+                    <img src="assets/images/group-of-men.png" width="50px">
+                </div>
+                <div class="col-sm-6">
+
+                </div>
+            </div>
+            <h5 class="card-title">Clerks</h5>
+
+        </a>
+    </li>
+
+
+
+    <li>
+        <a class="active" href="order-edit/18">
+            <div class="row">
+                <div class="col-sm-6 dash-img">
+                    <img src="assets/images/order.png" width="48px">
+                </div>
+                <div class="col-sm-6">
+
+                </div>
+            </div>
+            <h5 class="card-title">Orders</h5>
+        </a>
+    </li>
+
+
+    <li>
+        <a class="active" href="order-edit/18">
+            <div class="row">
+                <div class="col-sm-6 dash-img">
+                    <img src="assets/images/discount.png" width="40px">
+                </div>
+                <div class="col-sm-6">
+
+                </div>
+            </div>
+            <h5>Sales</h5>
+        </a>
+    </li>
+
+
+    <li>
+        <a (click)="logout()" routerLinkActive="active">
+            <div class="row">
+                <div class="col-sm-6 dash-img">
+                    <img src="assets/images/logout.png" width="30px">
+                </div>
+                <div class="col-sm-6">
+
+                </div>
+            </div>
+            <h5 class="card-title">Log out</h5>
+        </a>
+    </li>
+</ul>
+
+<div class="dashboard">
+    <h1>Manager</h1>
+    <hr>
+    <div class="container">
+        <div class="auth-page mt-5">
+            <div class="container page">
+                <div class="row rowAuth">
+
+                    <div class="card authCard p-4 col-md-5 col-xs-12">
+                        <h1> Order request</h1>
+
+                        <form [formGroup]='orderForm'>
+
+                            <mat-form-field class="form-group" appearance="outline">
+                                <mat-label>Item</mat-label>
+                                <input matInput formControlName="item" type="text" required>
+                            </mat-form-field>
+                            <mat-error *ngIf="submitted && field.item.hasError('required')">Item is required</mat-error>
+
+                            <br>
+
+                            <mat-form-field class="form-group" appearance="outline">
+                                <mat-label>Buying price</mat-label>
+                                <input matInput formControlName="buying_price" type="number" required>
+                            </mat-form-field>
+                            <mat-error *ngIf="submitted && field.buying_price.hasError('required')">Buying price is
+                                required
+                            </mat-error>
+
+                            <br>
+
+                            <mat-form-field class="form-group" appearance="outline">
+                                <mat-label>Quantity bought </mat-label>
+                                <input matInput formControlName="quantity_bought" type="number" required>
+                            </mat-form-field>
+                            <mat-error *ngIf="submitted && field.quantity_bought.hasError('required')">Quantity bought
+                                is
+                                required
+                            </mat-error>
+
+                            <br>
+
+                            <mat-form-field class="form-group" appearance="outline">
+                                <mat-label>Supplier</mat-label>
+                                <input matInput formControlName="supplier" type="text" required>
+                            </mat-form-field>
+                            <mat-error *ngIf="submitted && field.supplier.hasError('required')">Supplier is required
+                            </mat-error>
+
+                            <mat-form-field class="form-group" appearance="outline">
+                                <mat-label>Shop</mat-label>
+                                <input matInput formControlName="shop" type="text" required>
+                            </mat-form-field>
+                            <mat-error *ngIf="submitted && field.shop.hasError('required')">Shop is required
+                            </mat-error>
+
+
+                            <mat-form-field class="form-group" appearance="outline">
+                                <mat-label>Clerk</mat-label>
+                                <input matInput formControlName="clerk" type="text" required>
+                            </mat-form-field>
+                            <mat-error *ngIf="submitted && field.clerk.hasError('required')">Clerk is required
+                            </mat-error>
+
+
+                            <div class="col-md-5">
+                                <div class="radio">
+                                    <label><input type="radio" [value]="true" formControlName="paid_for">Paid</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" [value]="false" formControlName="paid_for">Unpaid</label>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <button mat-flat-button (click)='updateOrder()' type="submit"> Submit
+
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 </div>

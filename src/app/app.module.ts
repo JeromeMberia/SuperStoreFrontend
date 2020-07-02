@@ -42,6 +42,8 @@ import { OrderEditFormComponent } from './order-edit-form/order-edit-form.compon
 import { ClerkOrderComponent } from './clerk-order/clerk-order.component';
 import { ItemTableComponent } from './item-table/item-table.component';
 import { MerchantTableComponent } from './merchant-table/merchant-table.component';
+import { SalesTableComponent } from './sales-table/sales-table.component';
+import { MerchantDashManagerComponent } from './merchant-dash-manager/merchant-dash-manager.component';
 
 
 @NgModule({
@@ -65,6 +67,8 @@ import { MerchantTableComponent } from './merchant-table/merchant-table.componen
     ClerkOrderComponent,
     ItemTableComponent,
     MerchantTableComponent,
+    SalesTableComponent,
+    MerchantDashManagerComponent,
   
 
 

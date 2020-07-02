@@ -18,20 +18,14 @@ export class MerchantTableComponent implements AfterViewInit, OnInit {
   dataSource: MerchantTableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['email', 'name', 'shop'];
 
-  constructor(
-    private route: ActivatedRoute,
-    private userService: UserService,
-    private router: Router,
-  ) { }
+  
 
   ngOnInit() {
     this.dataSource = new MerchantTableDataSource();
   }
 
-
-  
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
@@ -39,7 +33,11 @@ export class MerchantTableComponent implements AfterViewInit, OnInit {
     this.table.dataSource = this.dataSource;
   }
 
-
+  constructor(
+    private route: ActivatedRoute,
+    private userService: UserService,
+    private router: Router,
+  ) { }
 
   logout() {
     this.userService.purgeAuth();

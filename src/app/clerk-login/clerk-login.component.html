@@ -106,8 +106,8 @@
 
               </div>
               <div class="col-md-6 text-right">
-                <button mat-flat-button class="submitBtn" type="submit" > Log in
-               
+                <button *ngIf="authType == 'clerk-register'" mat-flat-button class="submitBtn" type="submit" > Sign Up</button>
+                <button *ngIf="authType == 'clerk-login'" mat-flat-button class="submitBtn" type="submit" > Log in
                 </button>
               </div>
             </div>

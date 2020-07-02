@@ -1,16 +1,11 @@
-
 <app-navbar></app-navbar>
-<br>
 <br>
 <div class="auth-page mt-5">
   <div class="container page">
     <div class="row rowAuth">
 
-      
+
       <div class="card authCard p-4 col-md-5 col-xs-12">
-
-
-      
 
         <form [formGroup]="authForm" (ngSubmit)="submitForm()">
           <fieldset [disabled]="isSubmitting">
@@ -21,7 +16,7 @@
 
             <mat-form-field class="form-group" appearance="outline" *ngIf="authType == 'register'">
               <mat-label>Username</mat-label>
-              <input matInput formControlName="username"  type="text"  required>
+              <input matInput formControlName="username" type="text" required>
               <mat-icon matSuffix>account_circle</mat-icon>
             </mat-form-field>
 
@@ -29,7 +24,7 @@
 
             <mat-form-field class="form-group" appearance="outline" *ngIf="authType == 'register'">
               <mat-label>First name</mat-label>
-              <input matInput formControlName="first_name"  type="text"  required>
+              <input matInput formControlName="first_name" type="text" required>
               <mat-icon matSuffix>person</mat-icon>
             </mat-form-field>
 
@@ -37,7 +32,7 @@
 
             <mat-form-field class="form-group" appearance="outline" *ngIf="authType == 'register'">
               <mat-label>Last name</mat-label>
-              <input matInput formControlName="last_name"  type="text"  required>
+              <input matInput formControlName="last_name" type="text" required>
               <mat-icon matSuffix>person</mat-icon>
             </mat-form-field>
 
@@ -47,49 +42,51 @@
               <mat-label>Email</mat-label>
               <input matInput formControlName="email" type="text" required>
               <mat-icon matSuffix>email</mat-icon>
-             
+
             </mat-form-field>
 
 
 
-              <mat-form-field  class="form-group" appearance="outline" *ngIf="authType == 'login'">
-                <mat-label>Password</mat-label>
-                <input matInput formControlName="password"  [type]="hide ? 'password' : 'text'" type="password" required>
-                <mat-icon matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                  {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </mat-form-field>
+            <mat-form-field class="form-group" appearance="outline" *ngIf="authType == 'login'">
+              <mat-label>Password</mat-label>
+              <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" type="password" required>
+              <mat-icon matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </mat-form-field>
 
 
             <div class="row" [hidden]="authType == 'login'">
               <div class="col-md-5">
 
-                  <mat-form-field  appearance="outline">
-                    <mat-label>Password</mat-label>
-                    <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" type="password" required>
-                  </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" type="password"
+                    required>
+                </mat-form-field>
 
               </div>
 
 
               <div class="col-md-5">
 
-                <mat-form-field  appearance="outline">
+                <mat-form-field appearance="outline">
                   <mat-label>Confirm Password</mat-label>
-                  <input matInput [type]="hide ? 'password' : 'text'" type="password" >
-                 
+                  <input matInput [type]="hide ? 'password' : 'text'" type="password">
+
                 </mat-form-field>
 
               </div>
 
               <div class="visibilityIcon col-md-2 mt-4 ">
-                <mat-icon matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
                   {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
 
               </div>
 
             </div>
 
-          
+
 
             <div class="row">
               <div class="col-md-6">
@@ -98,14 +95,15 @@
 
               </div>
               <div class="col-md-6 text-right">
-                <button mat-flat-button class="submitBtn" type="submit" > Log in
-               
-                </button>
+                <button *ngIf="authType == 'register'" mat-flat-button class="submitBtn" type="submit"> Sign up</button>
+              </div>
+              <div class="col-md-6 text-right">
+                <button *ngIf="authType == 'login'" mat-flat-button class="submitBtn" type="submit"> Log in</button>
               </div>
             </div>
 
 
-        
+
           </fieldset>
 
         </form>
@@ -114,5 +112,3 @@
     </div>
   </div>
 </div>
-
-

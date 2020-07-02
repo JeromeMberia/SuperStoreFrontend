@@ -12,8 +12,10 @@ import {MerchantTableComponent} from './merchant-table/merchant-table.component'
 import {OrderEditFormComponent} from './order-edit-form/order-edit-form.component';
 import {ClerkLoginComponent} from './clerk-login/clerk-login.component';
 import {ClerkSalesComponent} from './clerk-sales/clerk-sales.component';
+import {SalesTableComponent} from './sales-table/sales-table.component';
 import {ClerkOrderComponent} from './clerk-order/clerk-order.component';
 import { SignupComponent } from './signup/signup.component';
+import { MerchantDashManagerComponent } from './merchant-dash-manager/merchant-dash-manager.component';
 import { ItemTableComponent } from './item-table/item-table.component'
 import { NotFoundComponent } from './not-found/not-found.component';
 
@@ -32,9 +34,11 @@ const routes: Routes = [
   { path: 'clerk-register', component: ClerkLoginComponent},
   { path: 'clerk-sales', component: ClerkSalesComponent},
   { path: 'clerk-order', component: ClerkOrderComponent},
+  { path: 'sales-table', component: SalesTableComponent},
   { path: 'signup', component: SignupComponent},
   { path: 'register', component: LoginComponent},
   { path: 'merchant-manager', component: MerchantManagerComponent},
+  { path: 'merchant-dash-manager', component: MerchantDashManagerComponent},
   { path: 'merchant-table', component: MerchantTableComponent},
   { path: 'item-table', component:  ItemTableComponent},
   { path: '', redirectTo:"/homepage", pathMatch:"full"},

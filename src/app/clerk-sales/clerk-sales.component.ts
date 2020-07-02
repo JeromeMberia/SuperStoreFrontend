@@ -58,7 +58,7 @@ export class ClerkSalesComponent implements OnInit {
       .pipe(first())
       .subscribe(
         (data) => {
-          console.log("productSales data-", data);
+          console.log("productSalesssssssssss data-", data);
           this.loading = false;
           this.router.navigate(['/clerk-sales']);
         },
@@ -73,7 +73,7 @@ export class ClerkSalesComponent implements OnInit {
     this.clerkService.getSales()
     .subscribe((response:Sales[])=> {
       this.sales = response
-      console.log(this.sales)
+   
     })
   }
 

@@ -13,8 +13,11 @@ export interface ManagerTableItem {
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: ManagerTableItem[] = [
-  {full_name: 'Brian Nabiswa', email: 'bnabiswa@gmail.com'},
-  {full_name: 'Jerome Mberia', email:'jmberia@gmail.com'},
+  {full_name: 'Alphania Wanjira', email: 'alphwanjira@gmail.com'},
+  {full_name: 'Jerome Mberia', email:'jerome@gmail.com'},
+  {full_name: 'Albina Muturi', email: 'albinanyawira@gmail.com'},
+  {full_name: 'Antonio Maina', email: 'antomaina@gmail.com'},
+  {full_name: 'Allan Poe', email: 'poeallan@gmail.com'},
 
 ];
 

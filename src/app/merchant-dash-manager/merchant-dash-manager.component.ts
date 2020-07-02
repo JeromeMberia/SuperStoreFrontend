@@ -10,17 +10,16 @@ import {Manager} from '../models/manager.model';
 import 'chart.piecelabel.js';
 
 @Component({
-  selector: 'app-manager',
-  templateUrl: './manager.component.html',
-  styleUrls: ['./manager.component.css']
+  selector: 'app-merchant-dash-manager',
+  templateUrl: './merchant-dash-manager.component.html',
+  styleUrls: ['./merchant-dash-manager.component.css']
 })
-export class ManagerComponent implements OnInit {
+export class MerchantDashManagerComponent implements OnInit {
 
   currentUser: User;
   manager: Manager;
   orders :ProductBatch[];
   
-
 
   public doughnutChartLabels = ['clothing', 'stationery', 'hardware', 'confectionery'];
   public doughnutChartData = [150000, 350000, 300000, 500000];
@@ -205,18 +204,6 @@ export class ManagerComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-  
-
-  console.log('njrkkfdmnkwope')
-  this.getProducts()
-  }
-  
-  getProducts(){
-    this.clerkService.getProductBatch()
-    .subscribe((response:ProductBatch[])=> {
-      this.orders = response.filter(order=>order.paid_for === false)
-      console.log(this.orders)
-    })
   }
 
   logout() {
